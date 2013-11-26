@@ -16,6 +16,12 @@ class UserController extends BaseController {
 		$user = new User;
 		$user->email = Input::get('email');
 		$user->password = Hash::make(Input::get('password'));
+
+		$role = new Role;
+		$role->root = false;
+		$role->admin = false;
+		$user->role = $role;
+
 		$user->save();
 
 		Auth::loginUsingId($user->id);
