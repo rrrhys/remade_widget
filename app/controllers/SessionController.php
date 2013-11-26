@@ -17,7 +17,7 @@ class SessionController extends BaseController {
 		if(Auth::attempt(array(
 			'email'=>$email, 
 			'password'=>$password))){
-			return Redirect::to('/')->with('success','Login successful!');
+			return Redirect::to('/dashboard')->with('success','Login successful!');
 		}else{
 			return Redirect::to('/')->with('error','Login failed.');
 		}

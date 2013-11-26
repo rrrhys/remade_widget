@@ -12,9 +12,10 @@
 */
 
 Route::get('/', 'HomeController@index');
-
+Route::get('/dashboard', 'UserController@show');
 
 Route::resource('user','UserController');
+Route::get('/user/child_password_reset/{id}','UserController@child_password_reset')->where('id','[0-9]+');
 
 
 Route::post('signin','SessionController@create');

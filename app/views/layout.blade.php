@@ -12,7 +12,8 @@
  @include('nav')
 <div class="container">
 @include('flash_messages')
-<h1>@yield('title')</h1>
+@include('validation_errors')
+<h3>@yield('title')</h3>
  @yield('content')
 </div>
 </body>

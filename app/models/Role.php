@@ -5,7 +5,7 @@ class Role extends Eloquent {
 
 	public static $rules = array();
 
-	public function User(){
-		return $this->hasOne('user');
+	public function user(){
+		return $this->belongsTo('User');
 	}
 }
