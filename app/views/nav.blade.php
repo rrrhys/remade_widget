@@ -1,4 +1,4 @@
-<div class="navbar navbar-default">
+<div class="navbar navbar-default navbar-static-top">
 		<a class="navbar-brand" href="/">Widget</a>
 		<ul class="nav navbar-nav">
 
