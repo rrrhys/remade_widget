@@ -1,7 +1,10 @@
 @extends('layout')
 
 @section('title')
-{{$user->email}}
+{{$user->email}}{{$user->parent_id}}
+	@unless($user->parent_id == 0)
+		<small>Sub-account of {{$user->parent->email}}</small>
+	@endunless
 @stop
 @section('content')
 
