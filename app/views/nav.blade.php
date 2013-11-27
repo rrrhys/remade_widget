@@ -8,6 +8,9 @@
 						Signed in as {{Auth::user()->email}} <span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu">
+						<li>{{link_to_action('UserController@show','Dashboard')}}</li>
+						<li></li>
+						<li>{{link_to_action('UserController@settings','Settings')}}</li>
 						<li>
 							{{link_to_action('SessionController@destroy','Sign Out')}}
 						</li>

@@ -14,8 +14,18 @@
 Route::get('/', 'HomeController@index');
 Route::get('/dashboard', 'UserController@show');
 
+
+
+Route::get('/widget/{widget_token}', 'WidgetController@to_user');
+
+Route::get('/user/settings', 'UserController@settings');
+Route::post('/user/settings', 'UserController@storeSettings');
+
+
 Route::resource('user','UserController');
-Route::get('/user/child_password_reset/{id}','UserController@child_password_reset')->where('id','[0-9]+');
+Route::get('/user/send_child_password_reset/{id}','UserController@send_child_password_reset')->where('id','[0-9]+');
+Route::get('/user/password_reset/{token}','UserController@password_reset');
+Route::post('/user/save_new_password','UserController@save_new_password');
 
 
 Route::post('signin','SessionController@create');

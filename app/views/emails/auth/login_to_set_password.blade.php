@@ -7,7 +7,7 @@
 		<h2>Password Reset</h2>
 
 		<div>
-			To reset your password, complete this form: {{ URL::action('UserController@password_reset', array('token'=>$token)) }}.
+			To set your password, complete this form: {{ URL::action('UserController@password_reset', array('token'=>$token)) }}.
 		</div>
 	</body>
 </html>
