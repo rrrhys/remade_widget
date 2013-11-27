@@ -12,7 +12,7 @@ label {
 
 
 .navbar-default {
-    background-color: #e1baa2;
+    background-color: #e1baa2 !important;
     border-color: #b48861;
 }
 .navbar-default .navbar-brand {
