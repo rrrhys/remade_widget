@@ -1,0 +1,126 @@
+[2013-11-28 04:03:58] SignInCept.php.INFO: am on page "/dashboard" [] []
+[2013-11-28 04:03:58] SignInCept.php.INFO: am on page "/" [] []
+[2013-11-28 04:03:58] SignInCept.php.INFO: PASSED [] []
+[2013-11-28 04:04:37] SignInCept.php.INFO: see "You need to be signed in to go to the dashboard" [] []
+[2013-11-28 04:04:37] SignInCept.php.ALERT: Failed asserting that 
+-->  <bold>/myapp</bold><info>404 Not Found 404 Not Found nginx/1.4.1</info>
+--> contains "you need to be signed in to go to the dashboard". [] []
+[2013-11-28 04:04:37] SignInCept.php.INFO: # FAILED # [] []
+[2013-11-28 04:04:37] SignInCept.php.INFO: PASSED [] []
+[2013-11-28 04:04:49] SignInCept.php.INFO: see "You need to be signed in to go to the dashboard" [] []
+[2013-11-28 04:04:49] SignInCept.php.ALERT: Failed asserting that 
+-->  <bold>/myapp</bold><info>404 Not Found 404 Not Found nginx/1.4.1</info>
+--> contains "you need to be signed in to go to the dashboard". [] []
+[2013-11-28 04:04:49] SignInCept.php.INFO: # FAILED # [] []
+[2013-11-28 04:04:49] SignInCept.php.INFO: PASSED [] []
+[2013-11-28 04:05:15] SignInCept.php.INFO: am on page "/dashboard" [] []
+[2013-11-28 04:05:15] SignInCept.php.INFO: see "You need to be signed in to go to the dashboard" [] []
+[2013-11-28 04:05:15] SignInCept.php.ALERT: Failed asserting that 
+-->  <bold>/myapp/dashboard</bold><info>404 Not Found 404 Not Found nginx/1.4.1</info>
+--> contains "you need to be signed in to go to the dashboard". [] []
+[2013-11-28 04:05:15] SignInCept.php.INFO: # FAILED # [] []
+[2013-11-28 04:05:15] SignInCept.php.INFO: PASSED [] []
+[2013-11-28 04:05:19] SignInCept.php.INFO: am on page "/dashboard" [] []
+[2013-11-28 04:05:19] SignInCept.php.INFO: see "You need to be signed in to go to the dashboard" [] []
+[2013-11-28 04:05:19] SignInCept.php.ALERT: Failed asserting that 
+-->  <bold>/myapp/dashboard</bold><info>404 Not Found 404 Not Found nginx/1.4.1</info>
+--> contains "you need to be signed in to go to the dashboard". [] []
+[2013-11-28 04:05:19] SignInCept.php.INFO: # FAILED # [] []
+[2013-11-28 04:05:19] SignInCept.php.INFO: PASSED [] []
+[2013-11-28 04:06:14] SignInCept.php.INFO: am on page "/dashboard" [] []
+[2013-11-28 04:06:14] SignInCept.php.INFO: see "You need to be signed in to go to the dashboard" [] []
+[2013-11-28 04:06:14] SignInCept.php.INFO: am on page "/" [] []
+[2013-11-28 04:06:14] SignInCept.php.INFO: PASSED [] []
+[2013-11-28 04:19:40] SignInCept.php.INFO: am on page "/dashboard" [] []
+[2013-11-28 04:19:40] SignInCept.php.INFO: see "You need to be signed in to go to the dashboard" [] []
+[2013-11-28 04:19:40] SignInCept.php.ALERT: Failed asserting that 
+-->  <bold>/dashboard</bold><info>TEST</info>
+--> contains "you need to be signed in to go to the dashboard". [] []
+[2013-11-28 04:19:40] SignInCept.php.INFO: # FAILED # [] []
+[2013-11-28 04:19:40] SignInCept.php.INFO: PASSED [] []
+[2013-11-28 04:19:44] SignInCept.php.INFO: am on page "/dashboard" [] []
+[2013-11-28 04:19:44] SignInCept.php.INFO: see "You need to be signed in to go to the dashboard" [] []
+[2013-11-28 04:19:44] SignInCept.php.ALERT: Failed asserting that 
+-->  <bold>/dashboard</bold><info>TEST</info>
+--> contains "you need to be signed in to go to the dashboard". [] []
+[2013-11-28 04:19:44] SignInCept.php.INFO: # FAILED # [] []
+[2013-11-28 04:19:44] SignInCept.php.INFO: PASSED [] []
+[2013-11-28 04:19:55] SignInCept.php.INFO: am on page "/dashboard" [] []
+[2013-11-28 04:19:55] SignInCept.php.INFO: see "You need to be signed in to go to the dashboard" [] []
+[2013-11-28 04:19:55] SignInCept.php.INFO: am on page "/" [] []
+[2013-11-28 04:19:55] SignInCept.php.INFO: PASSED [] []
+[2013-11-28 04:27:16] SignInCept.php.INFO: am on page "/dashboard" [] []
+[2013-11-28 04:27:16] SignInCept.php.INFO: see "You need to be signed in to go to the dashboard" [] []
+[2013-11-28 04:27:16] SignInCept.php.INFO: am on page "/user/create" [] []
+[2013-11-28 04:27:16] SignInCept.php.INFO: see "Create account","h3" [] []
+[2013-11-28 04:27:16] SignInCept.php.INFO: PASSED [] []
+[2013-11-28 04:29:53] SignInCept.php.INFO: am on page "/dashboard" [] []
+[2013-11-28 04:29:53] SignInCept.php.INFO: see "You need to be signed in to go to the dashboard" [] []
+[2013-11-28 04:29:53] SignInCept.php.INFO: am on page "/user/create" [] []
+[2013-11-28 04:29:53] SignInCept.php.INFO: see "Create account","h3" [] []
+[2013-11-28 04:29:53] SignInCept.php.INFO: fill field "email","rrrhys+mrtest@gmail.com" [] []
+[2013-11-28 04:29:53] SignInCept.php.INFO: fill field "password","a" [] []
+[2013-11-28 04:29:53] SignInCept.php.INFO: fill field "password_confirmation","b" [] []
+[2013-11-28 04:29:53] SignInCept.php.INFO: click "Register" [] []
+[2013-11-28 04:29:53] SignInCept.php.INFO: see "The password must be at least 8 characters" [] []
+[2013-11-28 04:29:53] SignInCept.php.ALERT: Failed asserting that 
+-->  <bold>/user/create</bold><info>app_name | Create account 		Widget 		 					 						Sign in 					 	 		EmailPassword	 				 				Create Account 				To Dos 						 		 	 	$(function(){ 		$(".signin_popup").on('click',function(){ 			$(".signin-menu").popover(); 		}); 	}) 	 	There were 2 validation errors! Please correct:The email field is</info>
+<debug>[Content too long to display. See complete response in '_log' directory]</debug>
+--> contains "the password must be at least 8 characters". [] []
+[2013-11-28 04:29:53] SignInCept.php.INFO: # FAILED # [] []
+[2013-11-28 04:29:53] SignInCept.php.INFO: PASSED [] []
+[2013-11-28 04:31:18] SignInCept.php.INFO: am on page "/dashboard" [] []
+[2013-11-28 04:31:19] SignInCept.php.INFO: see "You need to be signed in to go to the dashboard" [] []
+[2013-11-28 04:31:19] SignInCept.php.INFO: am on page "/user/create" [] []
+[2013-11-28 04:31:19] SignInCept.php.INFO: see "Create account","h3" [] []
+[2013-11-28 04:31:19] SignInCept.php.INFO: fill field "email","rrrhys+mrtest@gmail.com" [] []
+[2013-11-28 04:31:19] SignInCept.php.INFO: fill field "password","a" [] []
+[2013-11-28 04:31:19] SignInCept.php.INFO: fill field "password_confirmation","b" [] []
+[2013-11-28 04:31:19] SignInCept.php.INFO: click "Register" [] []
+[2013-11-28 04:31:19] SignInCept.php.INFO: see "The password must be at least 8 characters" [] []
+[2013-11-28 04:31:19] SignInCept.php.ALERT: Failed asserting that 
+-->  <bold>/user/create</bold><info>app_name | Create account 		Widget 		 					 						Sign in 					 	 		EmailPassword	 				 				Create Account 				To Dos 						 		 	 	$(function(){ 		$(".signin_popup").on('click',function(){ 			$(".signin-menu").popover(); 		}); 	}) 	 	There were 2 validation errors! Please correct:The email field is</info>
+<debug>[Content too long to display. See complete response in '_log' directory]</debug>
+--> contains "the password must be at least 8 characters". [] []
+[2013-11-28 04:31:19] SignInCept.php.INFO: # FAILED # [] []
+[2013-11-28 04:31:19] SignInCept.php.INFO: PASSED [] []
+[2013-11-28 04:39:15] SignInCept.php.INFO: am on page "/dashboard" [] []
+[2013-11-28 04:39:15] SignInCept.php.INFO: see "You need to be signed in to go to the dashboard" [] []
+[2013-11-28 04:39:15] SignInCept.php.INFO: am on page "/user/create" [] []
+[2013-11-28 04:39:15] SignInCept.php.INFO: see "Create account","h3" [] []
+[2013-11-28 04:39:15] SignInCept.php.INFO: fill field "email","rrrhys+mrtest@gmail.com" [] []
+[2013-11-28 04:39:15] SignInCept.php.INFO: fill field "password","a" [] []
+[2013-11-28 04:39:15] SignInCept.php.INFO: fill field "password_confirmation","b" [] []
+[2013-11-28 04:39:15] SignInCept.php.INFO: click "Register" [] []
+[2013-11-28 04:39:15] SignInCept.php.INFO: see "The password must be at least 8 characters" [] []
+[2013-11-28 04:39:15] SignInCept.php.ALERT: Failed asserting that 
+-->  <bold>/user/create</bold><info>app_name | Create account 		Widget 		 					 						Sign in 					 	 		EmailPassword	 				 				Create Account 				To Dos 						 		 	 	$(function(){ 		$(".signin_popup").on('click',function(){ 			$(".signin-menu").popover(); 		}); 	}) 	 	There were 2 validation errors! Please correct:The email field is</info>
+<debug>[Content too long to display. See complete response in '_log' directory]</debug>
+--> contains "the password must be at least 8 characters". [] []
+[2013-11-28 04:39:15] SignInCept.php.INFO: # FAILED # [] []
+[2013-11-28 04:39:15] SignInCept.php.INFO: PASSED [] []
+[2013-11-28 04:40:11] SignInCept.php.INFO: am on page "/dashboard" [] []
+[2013-11-28 04:40:12] SignInCept.php.INFO: see "You need to be signed in to go to the dashboard" [] []
+[2013-11-28 04:40:12] SignInCept.php.INFO: am on page "/user/create" [] []
+[2013-11-28 04:40:12] SignInCept.php.INFO: see "Create account","h3" [] []
+[2013-11-28 04:40:12] SignInCept.php.INFO: fill field "email","rrrhys+mrtest@gmail.com" [] []
+[2013-11-28 04:40:12] SignInCept.php.INFO: fill field "password","a" [] []
+[2013-11-28 04:40:12] SignInCept.php.INFO: fill field "password_confirmation","b" [] []
+[2013-11-28 04:40:12] SignInCept.php.INFO: click "Register" [] []
+[2013-11-28 04:40:12] SignInCept.php.INFO: see "The password must be at least 8 characters" [] []
+[2013-11-28 04:40:12] SignInCept.php.ALERT: Failed asserting that 
+-->  <bold>/user/create</bold><info>app_name | Create account 		Widget 		 					 						Sign in 					 	 		EmailPassword	 				 				Create Account 				To Dos 						 		 	 	$(function(){ 		$(".signin_popup").on('click',function(){ 			$(".signin-menu").popover(); 		}); 	}) 	 	There were 2 validation errors! Please correct:The email field is</info>
+<debug>[Content too long to display. See complete response in '_log' directory]</debug>
+--> contains "the password must be at least 8 characters". [] []
+[2013-11-28 04:40:12] SignInCept.php.INFO: # FAILED # [] []
+[2013-11-28 04:40:12] SignInCept.php.INFO: PASSED [] []
+[2013-11-28 04:46:50] SignInCept.php.INFO: am on page "/dashboard" [] []
+[2013-11-28 04:46:50] SignInCept.php.INFO: see "You need to be signed in to go to the dashboard" [] []
+[2013-11-28 04:46:50] SignInCept.php.INFO: am on page "/user/create" [] []
+[2013-11-28 04:46:50] SignInCept.php.INFO: see "Create account","h3" [] []
+[2013-11-28 04:46:50] SignInCept.php.INFO: fill field ".create_user #email","rrrhys+mrtest@gmail.com" [] []
+[2013-11-28 04:46:50] SignInCept.php.INFO: fill field ".create_user #password","a" [] []
+[2013-11-28 04:46:50] SignInCept.php.INFO: fill field ".create_user #password_confirmation","b" [] []
+[2013-11-28 04:46:50] SignInCept.php.INFO: click "Register" [] []
+[2013-11-28 04:46:50] SignInCept.php.INFO: see "The password must be at least 8 characters" [] []
+[2013-11-28 04:46:50] SignInCept.php.INFO: PASSED [] []

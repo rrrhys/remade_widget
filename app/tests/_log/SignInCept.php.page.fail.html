@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>app_name | Create account
+</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+	<link media="all" type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+
+	<link media="all" type="text/css" rel="stylesheet" href="http://widgetremade.rrrhys.com/css/main.css">
+</head>
+<body>
+ <div class="navbar navbar-default navbar-static-top">
+		<a class="navbar-brand" href="/">Widget</a>
+		<ul class="nav navbar-nav">
+
+							<!--li><a href="http://widgetremade.rrrhys.com/user/create">Sign in</a></li-->
+				<li class='dropdown'>
+					<a class='signin_popup' data-toggle='dropdown'>
+						Sign in
+					</a>
+
+	<div class="dropdown-menu" style='padding: 20px;'>
+		<form method="POST" action="http://widgetremade.rrrhys.com/signin" accept-charset="UTF-8"><input name="_token" type="hidden" value="isTlBnzjUIlq3ZWUXWKRktQLs7LlABftYq64NzVc"><label for="email">Email</label><input name="email" type="text" id="email">
+<br>
+<label for="password">Password</label><input name="password" type="password" value="" id="password"><input type="submit" value="Click">		</form>	</div>
+
+				</li>
+				<li><a href="http://widgetremade.rrrhys.com/user/create">Create Account</a></li>
+				<li><a href="http://widgetremade.rrrhys.com/user/create">To Dos</a></li>
+						
+		</ul>
+	</div>
+
+	<script>
+	$(function(){
+		$(".signin_popup").on('click',function(){
+			$(".signin-menu").popover();
+		});
+	})
+	</script>
+<div class="container">
+<div class="alert alert-notify">
+	<strong>There were 2 validation errors! Please correct:</strong><br>
+	<ul>
+			<li>The email field is required.</li>
+			<li>The password field is required.</li>
+		</ul>
+</div>
+<h3>Create account
+</h3>
+ <form method="POST" action="http://widgetremade.rrrhys.com/user" accept-charset="UTF-8"><input name="_token" type="hidden" value="isTlBnzjUIlq3ZWUXWKRktQLs7LlABftYq64NzVc"><label for="email">Email</label> <input name="email" type="text" id="email"><br>
+<label for="password">Password</label> <input name="password" type="password" value="" id="password"><br>
+<label for="password_confirmation">Password Confirmation</label> <input name="password_confirmation" type="password" value="" id="password_confirmation"><br>
+<input class="btn btn-primary" type="submit" value="Register"></form></div>
+</body>
+</html>

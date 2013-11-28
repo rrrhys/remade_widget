@@ -9,6 +9,9 @@ class UserController extends BaseController {
 	}
 	public function show(){
 		$user = Auth::user();
+		if(!$user){
+			return Redirect::to('/')->with('error','You need to be signed in to go to the dashboard.');
+		}
 		$widget_token = $user->widget_token;
 		if(!$widget_token){
 			$widget_token = $user->parent->widget_token;
