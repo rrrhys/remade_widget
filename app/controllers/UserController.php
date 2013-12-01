@@ -121,7 +121,9 @@ class UserController extends BaseController {
 				$role->admin = false;
 				$user->role()->save($role);
 
-
+				$widget_properties = new WidgetProperties();
+				$widget_properties->start_open = false;
+				$user->widget()->save($widget_properties);
 				
 
 				Auth::loginUsingId($user->id);

@@ -8,7 +8,7 @@
 @stop
 @section('content')
 
-<pre>{{URL::action('WidgetController@to_user',array($widget_token))}}</pre>
+<pre>{{URL::action('WidgetController@initjs',array($widget_token))}}</pre>
 
 
 @if($user->parent_id == 0)
