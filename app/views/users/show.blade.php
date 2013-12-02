@@ -9,7 +9,7 @@
 @section('content')
 
 <pre>{{URL::action('WidgetController@initjs',array($widget_token))}}</pre>
-
+<small>{{link_to_action('WidgetController@test_page','Visit test page',array($widget_token))}}</small>
 
 @if($user->parent_id == 0)
 <h4>Sub Accounts</h4>

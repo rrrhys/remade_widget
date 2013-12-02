@@ -82,6 +82,9 @@ class UserController extends BaseController {
 			$settings = new Settings;
 			$user->settings()->save($settings);
 
+			$widget_properties = new Widget_Properties;
+			$user->widget_properties()->save($widget_properties);
+
 			$user->password_reset_token = $this->get_password_reset_token();
 			$user->save();
 			Mail::send('emails.auth.login_to_set_password', array('token'=>$user->password_reset_token), function($message) Use ($user)
