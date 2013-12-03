@@ -5,7 +5,7 @@
 @stop
 @section('content')
 
-<pre>{{URL::action('WidgetController@to_user',array($user->widget_token))}}</pre>
+<pre>{{URL::action('WidgetController@js',array($user->widget_token))}}</pre>
 
 
 <h4>Settings</h4>

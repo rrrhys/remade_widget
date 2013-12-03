@@ -16,7 +16,10 @@ Route::get('/dashboard', 'UserController@show');
 
 
 
-Route::get('/widget/{widget_token}', 'WidgetController@to_user');
+//Route::get('/widget/{widget_token}', 'WidgetController@to_user');
+Route::get('widget/js/{widget_token}', 'WidgetController@js');
+Route::get('widget/test_page/{widget_token}','WidgetController@test_page');
+Route::post('widget/{widget_token}/update_stats/','WidgetController@update_stats');
 
 Route::get('/user/settings', 'UserController@settings');
 Route::post('/user/settings', 'UserController@storeSettings');

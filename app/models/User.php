@@ -51,6 +51,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function role(){
 		return $this->hasOne('Role');
 	}
+	public function widget(){
+		return $this->hasOne('Widget');
+	}
 	public function settings(){
 		return $this->hasOne('Settings');
 	}
@@ -60,5 +63,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function children(){
 		return $this->hasMany('User','parent_id');
 	}
-
+	public function addChildren(){
+		return true;
+	}
 }

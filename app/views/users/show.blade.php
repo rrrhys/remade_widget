@@ -8,8 +8,9 @@
 @stop
 @section('content')
 <h4>Widget code:</h4>
-<pre class='widget_code'>{{URL::action('WidgetController@to_user',array($widget_token))}}</pre>
+<pre class='widget_code'>{{URL::action('WidgetController@js',array($widget_token))}}</pre>
 
+<small>{{link_to_action('WidgetController@test_page','Visit test page',array($widget_token))}}</small>
 
 @if($user->parent_id == 0)
 <h4>Sub Accounts</h4>
