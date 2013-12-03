@@ -30,3 +30,7 @@ Route::post('/user/save_new_password','UserController@save_new_password');
 
 Route::post('signin','SessionController@create');
 Route::get('signout','SessionController@destroy');
+
+
+Route::get('/prepare_tests','TestController@prepare');
+Route::get('/teardown_tests','TestController@teardown');

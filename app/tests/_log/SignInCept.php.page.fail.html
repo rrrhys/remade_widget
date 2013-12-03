@@ -1,57 +1,1799 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>app_name | Create account
-</title>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-	<link media="all" type="text/css" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <head>
+    <meta charset="utf-8">
+    <title>Whoops! There was an error.</title>
 
-	<link media="all" type="text/css" rel="stylesheet" href="http://widgetremade.rrrhys.com/css/main.css">
-</head>
-<body>
- <div class="navbar navbar-default navbar-static-top">
-		<a class="navbar-brand" href="/">Widget</a>
-		<ul class="nav navbar-nav">
+    <style>.cf:before, .cf:after {content: " ";display: table;} .cf:after {clear: both;} .cf {*zoom: 1;}
+body {
+  font: 14px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  color: #2B2B2B;
+  background-color: #e7e7e7;
+  padding:0;
+  margin: 0;
+  max-height: 100%;
+}
+  a {
+    text-decoration: none;
+    color: #FE8A59;
+  }
 
-							<!--li><a href="http://widgetremade.rrrhys.com/user/create">Sign in</a></li-->
-				<li class='dropdown'>
-					<a class='signin_popup' data-toggle='dropdown'>
+.container{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+}
+
+.branding {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #777777;
+  font-size: 10px;
+    z-index: 100;
+}
+  .branding a {
+    color: #CD3F3F;
+  }
+
+header {
+  padding: 20px 20px;
+  color: #555;
+  background: #ddd;
+  box-sizing: border-box;
+  border-left: 5px solid #ED3D1A;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAACWCAYAAADaDe2PAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpBNTk1RDY3OTlBRkQxMUUyOUM0M0EzNzM1OTdBRTY0NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpBNTk1RDY3QTlBRkQxMUUyOUM0M0EzNzM1OTdBRTY0NyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkE1OTVENjc3OUFGRDExRTI5QzQzQTM3MzU5N0FFNjQ3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkE1OTVENjc4OUFGRDExRTI5QzQzQTM3MzU5N0FFNjQ3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+GLAjkgAAEaxJREFUeNrsXet2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);
+  background-repeat:no-repeat;
+  background-position:right;
+}
+  .exc-title {
+    margin: 0;
+    color: #616161;
+    font-weight:normal;
+  }
+    .exc-title-primary { color: #ED591A; }
+    .exc-message {
+      font-size: 32px;
+      margin: 5px 0;
+      word-wrap: break-word;
+    }
+
+.stack-container {
+    height: 100%;
+    position: relative;
+}
+
+.details-container {
+  height: 100%;
+  overflow: auto;
+  float: right;
+  width: 70%;
+  background: #fff;
+}
+  .details {
+    padding: 10px 20px;
+    border-left: 5px solid rgba(0, 0, 0, .2);
+  }
+
+.frames-container {
+  height: 100%;
+  overflow: auto;
+  float: left;
+  width: 30%;
+}
+  .frame {
+    padding: 14px;
+    background: #F3F3F3;
+    border-right: 1px solid rgba(0, 0, 0, .2);
+    cursor: pointer;
+    font-size:12px;
+  }
+    .frame.active {
+      background-color: #ED591A;
+      color: #F3F3F3;
+
+    }
+
+    .frame:not(.active):hover {
+      background: #F0E5DF;
+    }
+
+    .frame-class, .frame-function, .frame-index {
+      font-weight: bold;
+    }
+
+    .frame-index {
+      font-size: 11px;
+      color: #BDBDBD;
+    }
+
+    .frame-class {
+      color: #ED591A;
+    }
+      .active .frame-class {
+        color: #5E2204;
+      }
+
+    .frame-file {
+      font-family: 'Source Code Pro', Monaco, Consolas, "Lucida Console", monospace;
+      color:#999;
+      word-wrap:break-word;
+    }
+      .editor-link {
+        color: inherit;
+      }
+        .editor-link:hover strong {
+          color: #F0E5DF;
+        }
+
+        .editor-link-callout {
+          padding: 2px 4px;
+          background: #872D00;
+        }
+
+    .frame-line {
+      font-weight: bold;
+      color: #A33202;
+    }
+
+    .active .frame-file{ color:#872D00; }
+
+    .active .frame-line { color: #fff; }
+    .frame-line:before {
+      content: ":";
+    }
+
+    .frame-code {
+      padding: 20px;
+      background: #f0f0f0;
+      display: none;
+      border-left: 5px solid #EDA31A;
+    }
+
+    .frame-code.active {
+      display: block;
+    }
+
+    .frame-code .frame-file {
+      background: #ED591A;
+      color: #fff;
+      padding: 10px 10px 10px 10px;
+      font-size:11px;
+      font-weight:normal;
+    }
+
+    .code-block {
+      padding: 10px;
+      margin: 0;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    }
+
+    .linenums {
+      margin: 0;
+      margin-left: 10px;
+    }
+
+    .frame-comments {
+      border-top: none;
+      padding: 5px;
+      font-size: 12px;
+      background: #404040;
+    }
+
+    .frame-comments.empty {
+      padding: 8px 15px;
+    }
+
+    .frame-comments.empty:before {
+      content: "No comments for this stack frame.";
+      color: #828282;
+    }
+
+    .frame-comment {
+      padding: 10px 5px;
+      color: #D2D2D2;
+    }
+
+    .frame-comment:not(:last-child) {
+      border-bottom: 1px dotted rgba(0, 0, 0, .3);
+    }
+
+    .frame-comment-context {
+      font-size: 10px;
+      font-weight: bold;
+      color: #86D2B6;
+    }
+
+.data-table-container label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ED591A;
+  margin: 10px 0;
+  padding: 10px 0;
+
+  display: block;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, .08);
+}
+  .data-table {
+    width: 100%;
+    margin: 10px 0;
+    font: 12px 'Source Code Pro', Monaco, Consolas, "Lucida Console", monospace;
+  }
+
+  .data-table thead {
+    display: none;
+  }
+
+  .data-table tr {
+    padding: 5px 0;
+  }
+
+  .data-table td:first-child {
+    width: 20%;
+    min-width: 130px;
+    overflow: hidden;
+    color: #463C54;
+    padding-right: 5px;
+
+  }
+
+  .data-table td:last-child {
+    width: 80%;
+    color:#999;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+  }
+
+  .data-table .empty {
+    color: rgba(0, 0, 0, .3);
+    font-style: italic;
+  }
+
+.handler {
+  padding: 10px;
+  font: 14px monospace;
+}
+
+.handler.active {
+  color: #BBBBBB;
+  background: #989898;
+  font-weight: bold;
+}
+
+/* prettify code style
+Uses the Doxy theme as a base */
+pre .str, code .str { color: #E3B446; }  /* string  */
+pre .kwd, code .kwd { color: #DB613B;  font-weight: bold; }  /* keyword*/
+pre .com, code .com { color: #555; font-weight: bold; } /* comment */
+pre .typ, code .typ { color: #fff; }  /* type  */
+pre .lit, code .lit { color: #17CFB6; }  /* literal */
+pre .pun, code .pun { color: #93a1a1; font-weight: bold;  } /* punctuation  */
+pre .pln, code .pln { color: #ccc; }  /* plaintext  */
+pre .tag, code .tag { color: #DB613B; }  /* html/xml tag  */
+pre .htm, code .htm { color: #dda0dd; }  /* html tag */
+pre .xsl, code .xsl { color: #d0a0d0; }  /* xslt tag */
+pre .atn, code .atn { color: #fff; font-weight: normal;} /* html/xml attribute name */
+pre .atv, code .atv { color: #E3B446; }  /* html/xml attribute value  */
+pre .dec, code .dec { color: #fff; }  /* decimal  */
+pre.prettyprint, code.prettyprint {
+  font-weight:normal;
+  font-family: 'Source Code Pro', Monaco, Consolas, "Lucida Console", monospace;
+  background: #272727;
+  color: #929292;
+  font-size:11px;
+  line-height:1.5em;
+}
+  pre.prettyprint {
+    white-space: pre-wrap;
+  }
+
+  pre.prettyprint a, code.prettyprint a {
+    text-decoration:none;
+  }
+
+  .linenums li {
+    color: #A5A5A5;
+  }
+
+  .linenums li.current{
+    background: rgba(255, 255, 255, .05);
+    padding-top: 4px;
+    padding-left: 1px;
+  }
+    .linenums li.current.active {
+      background: rgba(255, 255, 255, .1);
+    }</style>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="stack-container">
+
+        <div class="frames-container cf ">
+
+                                <div class="frame active" id="frame-line-0">
+    <div class="frame-method-info">
+      <span class="frame-index">36.</span>
+                  <span class="frame-class">ErrorException</span>
+                  <span class="frame-function"></span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;Support/&shy;helpers.php<!--
+             --><span class="frame-line">508</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-1">
+    <div class="frame-method-info">
+      <span class="frame-index">35.</span>
+                  <span class="frame-class">Illuminate\Exception\Handler</span>
+                  <span class="frame-function">handleError</span>
+                </div>
+
+              <span class="frame-file">
+                <#unknown><!--
+             --><span class="frame-line">0</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-2">
+    <div class="frame-method-info">
+      <span class="frame-index">34.</span>
+                  <span class="frame-class"></span>
+                  <span class="frame-function">htmlentities</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;Support/&shy;helpers.php<!--
+             --><span class="frame-line">508</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-3">
+    <div class="frame-method-info">
+      <span class="frame-index">33.</span>
+                  <span class="frame-class"></span>
+                  <span class="frame-function">e</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;Html/&shy;HtmlBuilder.php<!--
+             --><span class="frame-line">356</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-4">
+    <div class="frame-method-info">
+      <span class="frame-index">32.</span>
+                  <span class="frame-class">Illuminate\Html\HtmlBuilder</span>
+                  <span class="frame-function">attributeElement</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;Html/&shy;HtmlBuilder.php<!--
+             --><span class="frame-line">337</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-5">
+    <div class="frame-method-info">
+      <span class="frame-index">31.</span>
+                  <span class="frame-class">Illuminate\Html\HtmlBuilder</span>
+                  <span class="frame-function">attributes</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;Html/&shy;FormBuilder.php<!--
+             --><span class="frame-line">239</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-6">
+    <div class="frame-method-info">
+      <span class="frame-index">30.</span>
+                  <span class="frame-class">Illuminate\Html\FormBuilder</span>
+                  <span class="frame-function">input</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;Html/&shy;FormBuilder.php<!--
+             --><span class="frame-line">252</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-7">
+    <div class="frame-method-info">
+      <span class="frame-index">29.</span>
+                  <span class="frame-class">Illuminate\Html\FormBuilder</span>
+                  <span class="frame-function">text</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;Support/&shy;Facades/&shy;Facade.php<!--
+             --><span class="frame-line">209</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-8">
+    <div class="frame-method-info">
+      <span class="frame-index">28.</span>
+                  <span class="frame-class">Illuminate\Support\Facades\Facade</span>
+                  <span class="frame-function">__callStatic</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;app/&shy;storage/&shy;views/&shy;08d74306924d6efdba1937a0707220b2<!--
+             --><span class="frame-line">31</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-9">
+    <div class="frame-method-info">
+      <span class="frame-index">27.</span>
+                  <span class="frame-class">Illuminate\Support\Facades\Form</span>
+                  <span class="frame-function">text</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;app/&shy;storage/&shy;views/&shy;08d74306924d6efdba1937a0707220b2<!--
+             --><span class="frame-line">31</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-10">
+    <div class="frame-method-info">
+      <span class="frame-index">26.</span>
+                  <span class="frame-class"></span>
+                  <span class="frame-function">include</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;View/&shy;Engines/&shy;PhpEngine.php<!--
+             --><span class="frame-line">38</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-11">
+    <div class="frame-method-info">
+      <span class="frame-index">25.</span>
+                  <span class="frame-class">Illuminate\View\Engines\PhpEngine</span>
+                  <span class="frame-function">evaluatePath</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;View/&shy;Engines/&shy;CompilerEngine.php<!--
+             --><span class="frame-line">45</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-12">
+    <div class="frame-method-info">
+      <span class="frame-index">24.</span>
+                  <span class="frame-class">Illuminate\View\Engines\CompilerEngine</span>
+                  <span class="frame-function">get</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;View/&shy;View.php<!--
+             --><span class="frame-line">100</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-13">
+    <div class="frame-method-info">
+      <span class="frame-index">23.</span>
+                  <span class="frame-class">Illuminate\View\View</span>
+                  <span class="frame-function">getContents</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;View/&shy;View.php<!--
+             --><span class="frame-line">81</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-14">
+    <div class="frame-method-info">
+      <span class="frame-index">22.</span>
+                  <span class="frame-class">Illuminate\View\View</span>
+                  <span class="frame-function">render</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;app/&shy;storage/&shy;views/&shy;08452869acd4e12ba4b07abe98ae2cfa<!--
+             --><span class="frame-line">12</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-15">
+    <div class="frame-method-info">
+      <span class="frame-index">21.</span>
+                  <span class="frame-class"></span>
+                  <span class="frame-function">include</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;View/&shy;Engines/&shy;PhpEngine.php<!--
+             --><span class="frame-line">38</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-16">
+    <div class="frame-method-info">
+      <span class="frame-index">20.</span>
+                  <span class="frame-class">Illuminate\View\Engines\PhpEngine</span>
+                  <span class="frame-function">evaluatePath</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;View/&shy;Engines/&shy;CompilerEngine.php<!--
+             --><span class="frame-line">45</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-17">
+    <div class="frame-method-info">
+      <span class="frame-index">19.</span>
+                  <span class="frame-class">Illuminate\View\Engines\CompilerEngine</span>
+                  <span class="frame-function">get</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;View/&shy;View.php<!--
+             --><span class="frame-line">100</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-18">
+    <div class="frame-method-info">
+      <span class="frame-index">18.</span>
+                  <span class="frame-class">Illuminate\View\View</span>
+                  <span class="frame-function">getContents</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;View/&shy;View.php<!--
+             --><span class="frame-line">81</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-19">
+    <div class="frame-method-info">
+      <span class="frame-index">17.</span>
+                  <span class="frame-class">Illuminate\View\View</span>
+                  <span class="frame-function">render</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;app/&shy;storage/&shy;views/&shy;d11fdff21a2159868108caad35ee04f5<!--
+             --><span class="frame-line">14</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-20">
+    <div class="frame-method-info">
+      <span class="frame-index">16.</span>
+                  <span class="frame-class"></span>
+                  <span class="frame-function">include</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;View/&shy;Engines/&shy;PhpEngine.php<!--
+             --><span class="frame-line">38</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-21">
+    <div class="frame-method-info">
+      <span class="frame-index">15.</span>
+                  <span class="frame-class">Illuminate\View\Engines\PhpEngine</span>
+                  <span class="frame-function">evaluatePath</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;View/&shy;Engines/&shy;CompilerEngine.php<!--
+             --><span class="frame-line">45</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-22">
+    <div class="frame-method-info">
+      <span class="frame-index">14.</span>
+                  <span class="frame-class">Illuminate\View\Engines\CompilerEngine</span>
+                  <span class="frame-function">get</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;View/&shy;View.php<!--
+             --><span class="frame-line">100</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-23">
+    <div class="frame-method-info">
+      <span class="frame-index">13.</span>
+                  <span class="frame-class">Illuminate\View\View</span>
+                  <span class="frame-function">getContents</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;View/&shy;View.php<!--
+             --><span class="frame-line">81</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-24">
+    <div class="frame-method-info">
+      <span class="frame-index">12.</span>
+                  <span class="frame-class">Illuminate\View\View</span>
+                  <span class="frame-function">render</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;Http/&shy;Response.php<!--
+             --><span class="frame-line">70</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-25">
+    <div class="frame-method-info">
+      <span class="frame-index">11.</span>
+                  <span class="frame-class">Illuminate\Http\Response</span>
+                  <span class="frame-function">setContent</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;symfony/&shy;http-foundation/&shy;Symfony/&shy;Component/&shy;HttpFoundation/&shy;Response.php<!--
+             --><span class="frame-line">141</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-26">
+    <div class="frame-method-info">
+      <span class="frame-index">10.</span>
+                  <span class="frame-class">Symfony\Component\HttpFoundation\Response</span>
+                  <span class="frame-function">__construct</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;Routing/&shy;Router.php<!--
+             --><span class="frame-line">1414</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-27">
+    <div class="frame-method-info">
+      <span class="frame-index">9.</span>
+                  <span class="frame-class">Illuminate\Routing\Router</span>
+                  <span class="frame-function">prepare</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;Routing/&shy;Controllers/&shy;Controller.php<!--
+             --><span class="frame-line">156</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-28">
+    <div class="frame-method-info">
+      <span class="frame-index">8.</span>
+                  <span class="frame-class">Illuminate\Routing\Controllers\Controller</span>
+                  <span class="frame-function">processResponse</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;Routing/&shy;Controllers/&shy;Controller.php<!--
+             --><span class="frame-line">126</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-29">
+    <div class="frame-method-info">
+      <span class="frame-index">7.</span>
+                  <span class="frame-class">Illuminate\Routing\Controllers\Controller</span>
+                  <span class="frame-function">callAction</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;Routing/&shy;Router.php<!--
+             --><span class="frame-line">985</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-30">
+    <div class="frame-method-info">
+      <span class="frame-index">6.</span>
+                  <span class="frame-class"></span>
+                  <span class="frame-function">Illuminate\Routing\{closure}</span>
+                </div>
+
+              <span class="frame-file">
+                <#unknown><!--
+             --><span class="frame-line">0</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-31">
+    <div class="frame-method-info">
+      <span class="frame-index">5.</span>
+                  <span class="frame-class"></span>
+                  <span class="frame-function">call_user_func_array</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;Routing/&shy;Route.php<!--
+             --><span class="frame-line">80</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-32">
+    <div class="frame-method-info">
+      <span class="frame-index">4.</span>
+                  <span class="frame-class">Illuminate\Routing\Route</span>
+                  <span class="frame-function">callCallable</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;Routing/&shy;Route.php<!--
+             --><span class="frame-line">47</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-33">
+    <div class="frame-method-info">
+      <span class="frame-index">3.</span>
+                  <span class="frame-class">Illuminate\Routing\Route</span>
+                  <span class="frame-function">run</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;Routing/&shy;Router.php<!--
+             --><span class="frame-line">1016</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-34">
+    <div class="frame-method-info">
+      <span class="frame-index">2.</span>
+                  <span class="frame-class">Illuminate\Routing\Router</span>
+                  <span class="frame-function">dispatch</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;Foundation/&shy;Application.php<!--
+             --><span class="frame-line">574</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-35">
+    <div class="frame-method-info">
+      <span class="frame-index">1.</span>
+                  <span class="frame-class">Illuminate\Foundation\Application</span>
+                  <span class="frame-function">dispatch</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;vendor/&shy;laravel/&shy;framework/&shy;src/&shy;Illuminate/&shy;Foundation/&shy;Application.php<!--
+             --><span class="frame-line">550</span>
+              </span>
+            </div>
+                      <div class="frame " id="frame-line-36">
+    <div class="frame-method-info">
+      <span class="frame-index">0.</span>
+                  <span class="frame-class">Illuminate\Foundation\Application</span>
+                  <span class="frame-function">run</span>
+                </div>
+
+              <span class="frame-file">
+                …/&shy;public/&shy;index.php<!--
+             --><span class="frame-line">49</span>
+              </span>
+            </div>
+          
+        </div>
+
+        <div class="details-container cf">
+
+          <header>
+            <div class="exception">
+              <h3 class="exc-title">
+                                                      <span class="exc-title-primary">ErrorException</span>
+                                                </h3>
+              <p class="exc-message">
+                htmlentities() expects parameter 1 to be string, array given              </p>
+            </div>
+          </header>
+
+                    <div class="frame-code-container ">
+                                          <div class="frame-code active" id="frame-code-0">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FSupport%2Fhelpers.php&line=508" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/Support/helpers.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:501">	 * Escape HTML entities in a string.
+	 *
+	 * @param  string  $value
+	 * @return string
+	 */
+	function e($value)
+	{
+		return htmlentities($value, ENT_QUOTES, &#039;UTF-8&#039;, false);
+	}
+}</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-1">
+                  <div class="frame-file">
+                                                              <strong>&lt;#unknown&gt;</strong>
+                                      </div>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-2">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FSupport%2Fhelpers.php&line=508" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/Support/helpers.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:501">	 * Escape HTML entities in a string.
+	 *
+	 * @param  string  $value
+	 * @return string
+	 */
+	function e($value)
+	{
+		return htmlentities($value, ENT_QUOTES, &#039;UTF-8&#039;, false);
+	}
+}</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-3">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FHtml%2FHtmlBuilder.php&line=356" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/Html/HtmlBuilder.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:349">	 * @param  string  $value
+	 * @return string
+	 */
+	protected function attributeElement($key, $value)
+	{
+		if (is_numeric($key)) $key = $value;
+ 
+		if ( ! is_null($value)) return $key.&#039;=&quot;&#039;.e($value).&#039;&quot;&#039;;
+	}
+ </pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-4">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FHtml%2FHtmlBuilder.php&line=337" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/Html/HtmlBuilder.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:330">		$html = array();
+ 
+		// For numeric keys we will assume that the key and the value are the same
+		// as this will convert HTML attributes such as &quot;required&quot; to a correct
+		// form like required=&quot;required&quot; instead of using incorrect numerics.
+		foreach ((array) $attributes as $key =&gt; $value)
+		{
+			$element = $this-&gt;attributeElement($key, $value);
+ 
+			if ( ! is_null($element)) $html[] = $element;</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-5">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FHtml%2FFormBuilder.php&line=239" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/Html/FormBuilder.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:232">		// Once we have the type, value, and ID we can marge them into the rest of the
+		// attributes array so we can convert them into their HTML attribute format
+		// when creating the HTML element. Then, we will return the entire input.
+		$merge = compact(&#039;type&#039;, &#039;value&#039;, &#039;id&#039;);
+ 
+		$options = array_merge($options, $merge);
+ 
+		return &#039;&lt;input&#039;.$this-&gt;html-&gt;attributes($options).&#039;&gt;&#039;;
+	}
+ </pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-6">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FHtml%2FFormBuilder.php&line=252" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/Html/FormBuilder.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:245">	 * @param  string  $name
+	 * @param  string  $value
+	 * @param  array   $options
+	 * @return string
+	 */
+	public function text($name, $value = null, $options = array())
+	{
+		return $this-&gt;input(&#039;text&#039;, $name, $value, $options);
+	}
+ </pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-7">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FSupport%2FFacades%2FFacade.php&line=209" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:202">			case 0:
+				return $instance-&gt;$method();
+ 
+			case 1:
+				return $instance-&gt;$method($args[0]);
+ 
+			case 2:
+				return $instance-&gt;$method($args[0], $args[1]);
+ 
+			case 3:</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-8">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fapp%2Fstorage%2Fviews%2F08d74306924d6efdba1937a0707220b2&line=31" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/app/storage/views/08d74306924d6efdba1937a0707220b2</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:24">					&lt;a class=&#039;signin_popup&#039; data-toggle=&#039;dropdown&#039;&gt;
 						Sign in
-					</a>
+					&lt;/a&gt;
+ 
+	&lt;div class=&quot;dropdown-menu&quot; style=&#039;padding: 20px;&#039;&gt;
+		&lt;?php echo Form::open(array(&#039;action&#039;=&gt;array(&#039;SessionController@create&#039;),&#039;class&#039;=&gt;&#039;signin&#039;)); ?&gt;
+&lt;?php echo Form::label(&#039;email&#039;); ?&gt;
+&lt;?php echo Form::text(&#039;email&#039;,array(&#039;class&#039;=&gt;&#039;signin&#039;)); ?&gt;
+ 
+&lt;br&gt;</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
 
-	<div class="dropdown-menu" style='padding: 20px;'>
-		<form method="POST" action="http://widgetremade.rrrhys.com/signin" accept-charset="UTF-8"><input name="_token" type="hidden" value="isTlBnzjUIlq3ZWUXWKRktQLs7LlABftYq64NzVc"><label for="email">Email</label><input name="email" type="text" id="email">
-<br>
-<label for="password">Password</label><input name="password" type="password" value="" id="password"><input type="submit" value="Click">		</form>	</div>
+                </div>
+                                          <div class="frame-code " id="frame-code-9">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fapp%2Fstorage%2Fviews%2F08d74306924d6efdba1937a0707220b2&line=31" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/app/storage/views/08d74306924d6efdba1937a0707220b2</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:24">					&lt;a class=&#039;signin_popup&#039; data-toggle=&#039;dropdown&#039;&gt;
+						Sign in
+					&lt;/a&gt;
+ 
+	&lt;div class=&quot;dropdown-menu&quot; style=&#039;padding: 20px;&#039;&gt;
+		&lt;?php echo Form::open(array(&#039;action&#039;=&gt;array(&#039;SessionController@create&#039;),&#039;class&#039;=&gt;&#039;signin&#039;)); ?&gt;
+&lt;?php echo Form::label(&#039;email&#039;); ?&gt;
+&lt;?php echo Form::text(&#039;email&#039;,array(&#039;class&#039;=&gt;&#039;signin&#039;)); ?&gt;
+ 
+&lt;br&gt;</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
 
-				</li>
-				<li><a href="http://widgetremade.rrrhys.com/user/create">Create Account</a></li>
-				<li><a href="http://widgetremade.rrrhys.com/user/create">To Dos</a></li>
-						
-		</ul>
-	</div>
+                </div>
+                                          <div class="frame-code " id="frame-code-10">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FView%2FEngines%2FPhpEngine.php&line=38" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:31">		extract($__data);
+ 
+		// We&#039;ll evaluate the contents of the view inside a try/catch block so we can
+		// flush out any stray output that might get out before an error occurs or
+		// an exception is thrown. This prevents any partial views from leaking.
+		try
+		{
+			include $__path;
+		}
+		catch (\Exception $e)</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
 
-	<script>
-	$(function(){
-		$(".signin_popup").on('click',function(){
-			$(".signin-menu").popover();
-		});
-	})
-	</script>
-<div class="container">
-<div class="alert alert-notify">
-	<strong>There were 2 validation errors! Please correct:</strong><br>
-	<ul>
-			<li>The email field is required.</li>
-			<li>The password field is required.</li>
-		</ul>
-</div>
-<h3>Create account
-</h3>
- <form method="POST" action="http://widgetremade.rrrhys.com/user" accept-charset="UTF-8"><input name="_token" type="hidden" value="isTlBnzjUIlq3ZWUXWKRktQLs7LlABftYq64NzVc"><label for="email">Email</label> <input name="email" type="text" id="email"><br>
-<label for="password">Password</label> <input name="password" type="password" value="" id="password"><br>
-<label for="password_confirmation">Password Confirmation</label> <input name="password_confirmation" type="password" value="" id="password_confirmation"><br>
-<input class="btn btn-primary" type="submit" value="Register"></form></div>
-</body>
+                </div>
+                                          <div class="frame-code " id="frame-code-11">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FView%2FEngines%2FCompilerEngine.php&line=45" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:38">		if ($this-&gt;compiler-&gt;isExpired($path))
+		{
+			$this-&gt;compiler-&gt;compile($path);
+		}
+ 
+		$compiled = $this-&gt;compiler-&gt;getCompiledPath($path);
+ 
+		return $this-&gt;evaluatePath($compiled, $data);
+	}
+ </pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-12">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FView%2FView.php&line=100" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/View/View.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:93">	/**
+	 * Get the evaluated contents of the view.
+	 *
+	 * @return string
+	 */
+	protected function getContents()
+	{
+		return $this-&gt;engine-&gt;get($this-&gt;path, $this-&gt;gatherData());
+	}
+ </pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-13">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FView%2FView.php&line=81" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/View/View.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:74">		// We will keep track of the amount of views being rendered so we can flush
+		// the section after the complete rendering operation is done. This will
+		// clear out the sections for any separate views that may be rendered.
+		$env-&gt;incrementRender();
+ 
+		$env-&gt;callComposer($this);
+ 
+		$contents = $this-&gt;getContents();
+ 
+		// Once we&#039;ve finished rendering the view, we&#039;ll decrement the render count</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-14">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fapp%2Fstorage%2Fviews%2F08452869acd4e12ba4b07abe98ae2cfa&line=12" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/app/storage/views/08452869acd4e12ba4b07abe98ae2cfa</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:5">	&lt;?php echo HTML::script(&#039;//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&#039;); ?&gt;
+	&lt;?php echo HTML::script(&#039;//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js&#039;); ?&gt;
+	&lt;?php echo HTML::style(&#039;//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css&#039;); ?&gt;
+ 
+	&lt;?php echo HTML::style(&#039;css/main.css&#039;); ?&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ &lt;?php echo $__env-&gt;make(&#039;nav&#039;, array_except(get_defined_vars(), array(&#039;__data&#039;, &#039;__path&#039;)))-&gt;render(); ?&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;?php echo $__env-&gt;make(&#039;flash_messages&#039;, array_except(get_defined_vars(), array(&#039;__data&#039;, &#039;__path&#039;)))-&gt;render(); ?&gt;</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-15">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FView%2FEngines%2FPhpEngine.php&line=38" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:31">		extract($__data);
+ 
+		// We&#039;ll evaluate the contents of the view inside a try/catch block so we can
+		// flush out any stray output that might get out before an error occurs or
+		// an exception is thrown. This prevents any partial views from leaking.
+		try
+		{
+			include $__path;
+		}
+		catch (\Exception $e)</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-16">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FView%2FEngines%2FCompilerEngine.php&line=45" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:38">		if ($this-&gt;compiler-&gt;isExpired($path))
+		{
+			$this-&gt;compiler-&gt;compile($path);
+		}
+ 
+		$compiled = $this-&gt;compiler-&gt;getCompiledPath($path);
+ 
+		return $this-&gt;evaluatePath($compiled, $data);
+	}
+ </pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-17">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FView%2FView.php&line=100" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/View/View.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:93">	/**
+	 * Get the evaluated contents of the view.
+	 *
+	 * @return string
+	 */
+	protected function getContents()
+	{
+		return $this-&gt;engine-&gt;get($this-&gt;path, $this-&gt;gatherData());
+	}
+ </pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-18">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FView%2FView.php&line=81" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/View/View.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:74">		// We will keep track of the amount of views being rendered so we can flush
+		// the section after the complete rendering operation is done. This will
+		// clear out the sections for any separate views that may be rendered.
+		$env-&gt;incrementRender();
+ 
+		$env-&gt;callComposer($this);
+ 
+		$contents = $this-&gt;getContents();
+ 
+		// Once we&#039;ve finished rendering the view, we&#039;ll decrement the render count</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-19">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fapp%2Fstorage%2Fviews%2Fd11fdff21a2159868108caad35ee04f5&line=14" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/app/storage/views/d11fdff21a2159868108caad35ee04f5</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:7">&lt;?php echo Form::label(&#039;email&#039;); ?&gt; &lt;?php echo Form::text(&#039;email&#039;); ?&gt;&lt;br&gt;
+&lt;?php echo Form::label(&#039;password&#039;); ?&gt; &lt;?php echo Form::password(&#039;password&#039;); ?&gt;&lt;br&gt;
+&lt;?php echo Form::label(&#039;password_confirmation&#039;); ?&gt; &lt;?php echo Form::password(&#039;password_confirmation&#039;); ?&gt;&lt;br&gt;
+&lt;?php echo Form::submit(&#039;Register&#039;,array(&#039;class&#039;=&gt;&#039;btn btn-primary&#039;)); ?&gt;
+&lt;?php echo Form::close(); ?&gt;
+&lt;?php $__env-&gt;stopSection(); ?&gt;
+
+&lt;?php echo $__env-&gt;make(&#039;layout&#039;, array_except(get_defined_vars(), array(&#039;__data&#039;, &#039;__path&#039;)))-&gt;render(); ?&gt;</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-20">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FView%2FEngines%2FPhpEngine.php&line=38" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:31">		extract($__data);
+ 
+		// We&#039;ll evaluate the contents of the view inside a try/catch block so we can
+		// flush out any stray output that might get out before an error occurs or
+		// an exception is thrown. This prevents any partial views from leaking.
+		try
+		{
+			include $__path;
+		}
+		catch (\Exception $e)</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-21">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FView%2FEngines%2FCompilerEngine.php&line=45" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:38">		if ($this-&gt;compiler-&gt;isExpired($path))
+		{
+			$this-&gt;compiler-&gt;compile($path);
+		}
+ 
+		$compiled = $this-&gt;compiler-&gt;getCompiledPath($path);
+ 
+		return $this-&gt;evaluatePath($compiled, $data);
+	}
+ </pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-22">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FView%2FView.php&line=100" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/View/View.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:93">	/**
+	 * Get the evaluated contents of the view.
+	 *
+	 * @return string
+	 */
+	protected function getContents()
+	{
+		return $this-&gt;engine-&gt;get($this-&gt;path, $this-&gt;gatherData());
+	}
+ </pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-23">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FView%2FView.php&line=81" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/View/View.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:74">		// We will keep track of the amount of views being rendered so we can flush
+		// the section after the complete rendering operation is done. This will
+		// clear out the sections for any separate views that may be rendered.
+		$env-&gt;incrementRender();
+ 
+		$env-&gt;callComposer($this);
+ 
+		$contents = $this-&gt;getContents();
+ 
+		// Once we&#039;ve finished rendering the view, we&#039;ll decrement the render count</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-24">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FHttp%2FResponse.php&line=70" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/Http/Response.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:63">		}
+ 
+		// If this content implements the &quot;RenderableInterface&quot;, then we will call the
+		// render method on the object so we will avoid any &quot;__toString&quot; exceptions
+		// that might be thrown and have their errors obscured by PHP&#039;s handling.
+		elseif ($content instanceof RenderableInterface)
+		{
+			$content = $content-&gt;render();
+		}
+ </pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-25">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Fsymfony%2Fhttp-foundation%2FSymfony%2FComponent%2FHttpFoundation%2FResponse.php&line=141" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:134">     * @throws \InvalidArgumentException When the HTTP status code is not valid
+     *
+     * @api
+     */
+    public function __construct($content = &#039;&#039;, $status = 200, $headers = array())
+    {
+        $this-&gt;headers = new ResponseHeaderBag($headers);
+        $this-&gt;setContent($content);
+        $this-&gt;setStatusCode($status);
+        $this-&gt;setProtocolVersion(&#039;1.0&#039;);</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-26">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FRouting%2FRouter.php&line=1414" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/Routing/Router.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:1407">	 *
+	 * @param  mixed  $value
+	 * @param  \Illuminate\Http\Request  $request
+	 * @return \Symfony\Component\HttpFoundation\Response
+	 */
+	public function prepare($value, Request $request)
+	{
+		if ( ! $value instanceof SymfonyResponse) $value = new Response($value);
+ 
+		return $value-&gt;prepare($request);</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-27">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FRouting%2FControllers%2FController.php&line=156" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:149">	protected function processResponse($router, $method, $response)
+	{
+		$request = $router-&gt;getRequest();
+ 
+		// The after filters give the developers one last chance to do any last minute
+		// processing on the response. The response has already been converted to a
+		// full Response object and will also be handed off to the after filters.
+		$response = $router-&gt;prepare($response, $request);
+ 
+		$this-&gt;callAfterFilters($router, $method, $response);</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-28">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FRouting%2FControllers%2FController.php&line=126" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:119">		// used we will assume we want to just return the layout view as any nested
+		// views were probably bound on this view during this controller actions.
+		if (is_null($response) and ! is_null($this-&gt;layout))
+		{
+			$response = $this-&gt;layout;
+		}
+ 
+		return $this-&gt;processResponse($router, $method, $response);
+	}
+ </pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-29">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FRouting%2FRouter.php&line=985" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/Routing/Router.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:978">			// We will extract the passed in parameters off of the route object so we will
+			// pass them off to the controller method as arguments. We will not get the
+			// defaults so that the controllers will be able to use its own defaults.
+			$args = array_values($route-&gt;getParametersWithoutDefaults());
+ 
+			$instance = $ioc-&gt;make($controller);
+ 
+			return $instance-&gt;callAction($ioc, $me, $method, $args);
+		};
+	}</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-30">
+                  <div class="frame-file">
+                                                              <strong>&lt;#unknown&gt;</strong>
+                                      </div>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-31">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FRouting%2FRoute.php&line=80" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/Routing/Route.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:73">	 *
+	 * @return mixed
+	 */
+	protected function callCallable()
+	{
+		$variables = array_values($this-&gt;getParametersWithoutDefaults());
+ 
+		return call_user_func_array($this-&gt;getOption(&#039;_call&#039;), $variables);
+	}
+ </pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-32">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FRouting%2FRoute.php&line=47" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/Routing/Route.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:40">		// We will only call the router callable if no &quot;before&quot; middlewares returned
+		// a response. If they do, we will consider that the response to requests
+		// so that the request &quot;lifecycle&quot; will be easily halted for filtering.
+		$response = $this-&gt;callBeforeFilters($request);
+ 
+		if ( ! isset($response))
+		{
+			$response = $this-&gt;callCallable();
+		}
+ </pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-33">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FRouting%2FRouter.php&line=1016" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/Routing/Router.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:1009">		// Once we have the route, we can just run it to get the responses, which will
+		// always be instances of the Response class. Once we have the responses we
+		// will execute the global &quot;after&quot; middlewares to finish off the request.
+		else
+		{
+			$this-&gt;currentRoute = $route = $this-&gt;findRoute($request);
+ 
+			$response = $route-&gt;run($request);
+		}
+ </pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-34">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FFoundation%2FApplication.php&line=574" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/Foundation/Application.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:567">		if ($this-&gt;isDownForMaintenance())
+		{
+			$response = $this[&#039;events&#039;]-&gt;until(&#039;illuminate.app.down&#039;);
+ 
+			if ( ! is_null($response)) return $this-&gt;prepareResponse($response, $request);
+		}
+ 
+		return $this[&#039;router&#039;]-&gt;dispatch($this-&gt;prepareRequest($request));
+	}
+ </pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-35">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fvendor%2Flaravel%2Fframework%2Fsrc%2FIlluminate%2FFoundation%2FApplication.php&line=550" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/vendor/laravel/framework/src/Illuminate/Foundation/Application.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:543">	/**
+	 * Handles the given request and delivers the response.
+	 *
+	 * @return void
+	 */
+	public function run()
+	{
+		$response = $this-&gt;dispatch($this[&#039;request&#039;]);
+ 
+		$this[&#039;router&#039;]-&gt;callCloseFilter($this[&#039;request&#039;], $response);</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                                          <div class="frame-code " id="frame-code-36">
+                  <div class="frame-file">
+                                                              <a href="subl://open?url=file://%2Fhome%2Fwww%2Fremade_widget%2Fpublic%2Findex.php&line=49" class="editor-link">
+                        <span class="editor-link-callout">open:</span> <strong>/home/www/remade_widget/public/index.php</strong>
+                      </a>
+                                      </div>
+                                    <pre class="code-block prettyprint linenums:42">| Once we have the application, we can simply call the run method,
+| which will execute the request and send the response back to
+| the client&#039;s browser allowing them to enjoy the creative
+| and wonderful applications we have created for them.
+|
+*/
+ 
+$app-&gt;run();
+ 
+/*</pre>
+                  
+                                    <div class="frame-comments empty">
+                                      </div>
+
+                </div>
+                      </div>
+
+                    <div class="details">
+            <div class="data-table-container" id="data-tables">
+                              <div class="data-table" id="sg-serverrequest-data">
+                  <label>Server/Request Data</label>
+                                        <table class="data-table">
+                        <thead>
+                          <tr>
+                            <td class="data-table-k">Key</td>
+                            <td class="data-table-v">Value</td>
+                          </tr>
+                        </thead>
+                                              <tr>
+                          <td>REDIRECT_STATUS</td>
+                          <td>200</td>
+                        </tr>
+                                              <tr>
+                          <td>HTTP_HOST</td>
+                          <td>widgetremade.rrrhys.com</td>
+                        </tr>
+                                              <tr>
+                          <td>HTTP_CONNECTION</td>
+                          <td>close</td>
+                        </tr>
+                                              <tr>
+                          <td>HTTP_USER_AGENT</td>
+                          <td>Symfony2 BrowserKit</td>
+                        </tr>
+                                              <tr>
+                          <td>HTTP_REFERER</td>
+                          <td>http://widgetremade.rrrhys.com</td>
+                        </tr>
+                                              <tr>
+                          <td>HTTP_COOKIE</td>
+                          <td>laravel_session=kn6aln1737md9lh6bf6o1rucd4</td>
+                        </tr>
+                                              <tr>
+                          <td>PATH</td>
+                          <td>/sbin:/usr/sbin:/bin:/usr/bin</td>
+                        </tr>
+                                              <tr>
+                          <td>SERVER_SIGNATURE</td>
+                          <td>&lt;address&gt;Apache/2.2.25 (Amazon) Server at widgetremade.rrrhys.com Port 80&lt;/address&gt;
+</td>
+                        </tr>
+                                              <tr>
+                          <td>SERVER_SOFTWARE</td>
+                          <td>Apache/2.2.25 (Amazon)</td>
+                        </tr>
+                                              <tr>
+                          <td>SERVER_NAME</td>
+                          <td>widgetremade.rrrhys.com</td>
+                        </tr>
+                                              <tr>
+                          <td>SERVER_ADDR</td>
+                          <td>127.0.0.1</td>
+                        </tr>
+                                              <tr>
+                          <td>SERVER_PORT</td>
+                          <td>80</td>
+                        </tr>
+                                              <tr>
+                          <td>REMOTE_ADDR</td>
+                          <td>127.0.0.1</td>
+                        </tr>
+                                              <tr>
+                          <td>DOCUMENT_ROOT</td>
+                          <td>/home/www/remade_widget/public</td>
+                        </tr>
+                                              <tr>
+                          <td>SERVER_ADMIN</td>
+                          <td>hi@rrrhys.com</td>
+                        </tr>
+                                              <tr>
+                          <td>SCRIPT_FILENAME</td>
+                          <td>/home/www/remade_widget/public/index.php</td>
+                        </tr>
+                                              <tr>
+                          <td>REMOTE_PORT</td>
+                          <td>53893</td>
+                        </tr>
+                                              <tr>
+                          <td>REDIRECT_URL</td>
+                          <td>/user/create</td>
+                        </tr>
+                                              <tr>
+                          <td>GATEWAY_INTERFACE</td>
+                          <td>CGI/1.1</td>
+                        </tr>
+                                              <tr>
+                          <td>SERVER_PROTOCOL</td>
+                          <td>HTTP/1.0</td>
+                        </tr>
+                                              <tr>
+                          <td>REQUEST_METHOD</td>
+                          <td>GET</td>
+                        </tr>
+                                              <tr>
+                          <td>QUERY_STRING</td>
+                          <td></td>
+                        </tr>
+                                              <tr>
+                          <td>REQUEST_URI</td>
+                          <td>/user/create</td>
+                        </tr>
+                                              <tr>
+                          <td>SCRIPT_NAME</td>
+                          <td>/index.php</td>
+                        </tr>
+                                              <tr>
+                          <td>PHP_SELF</td>
+                          <td>/index.php</td>
+                        </tr>
+                                              <tr>
+                          <td>REQUEST_TIME</td>
+                          <td>1385624455</td>
+                        </tr>
+                                            </table>
+                                  </div>
+                              <div class="data-table" id="sg-get-data">
+                  <label>GET Data</label>
+                                      <span class="empty">empty</span>
+                                  </div>
+                              <div class="data-table" id="sg-post-data">
+                  <label>POST Data</label>
+                                      <span class="empty">empty</span>
+                                  </div>
+                              <div class="data-table" id="sg-files">
+                  <label>Files</label>
+                                      <span class="empty">empty</span>
+                                  </div>
+                              <div class="data-table" id="sg-cookies">
+                  <label>Cookies</label>
+                                        <table class="data-table">
+                        <thead>
+                          <tr>
+                            <td class="data-table-k">Key</td>
+                            <td class="data-table-v">Value</td>
+                          </tr>
+                        </thead>
+                                              <tr>
+                          <td>laravel_session</td>
+                          <td>kn6aln1737md9lh6bf6o1rucd4</td>
+                        </tr>
+                                            </table>
+                                  </div>
+                              <div class="data-table" id="sg-session">
+                  <label>Session</label>
+                                        <table class="data-table">
+                        <thead>
+                          <tr>
+                            <td class="data-table-k">Key</td>
+                            <td class="data-table-v">Value</td>
+                          </tr>
+                        </thead>
+                                              <tr>
+                          <td>_sf2_attributes</td>
+                          <td>Array
+(
+    [_token] =&gt; E3XcUTm6luD6B7VUk6fhyyPWy9uTxYPwHyl5pWwJ
+    [flash] =&gt; Array
+        (
+            [old] =&gt; Array
+                (
+                    [0] =&gt; error
+                )
+
+            [new] =&gt; Array
+                (
+                )
+
+        )
+
+    [error] =&gt; You need to be signed in to go to the dashboard.
+)
+</td>
+                        </tr>
+                                              <tr>
+                          <td>_sf2_flashes</td>
+                          <td>Array
+(
+)
+</td>
+                        </tr>
+                                              <tr>
+                          <td>_sf2_meta</td>
+                          <td>Array
+(
+    [u] =&gt; 1385624455
+    [c] =&gt; 1385624455
+    [l] =&gt; 7200
+)
+</td>
+                        </tr>
+                                            </table>
+                                  </div>
+                              <div class="data-table" id="sg-environment-variables">
+                  <label>Environment Variables</label>
+                                      <span class="empty">empty</span>
+                                  </div>
+                          </div>
+
+                        <div class="data-table-container" id="handlers">
+              <label>Registered Handlers</label>
+                              <div class="handler active">
+                  0. Whoops\Handler\PrettyPageHandler                </div>
+                          </div>
+
+          </div> <!-- .details -->
+        </div>
+
+      </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+      $(function() {
+        prettyPrint();
+
+        var $frameLines  = $('[id^="frame-line-"]');
+        var $activeLine  = $('.frames-container .active');
+        var $activeFrame = $('.active[id^="frame-code-"]').show();
+        var $container   = $('.details-container');
+        var headerHeight = $('header').css('height');
+
+        var highlightCurrentLine = function() {
+          // Highlight the active and neighboring lines for this frame:
+          var activeLineNumber = +($activeLine.find('.frame-line').text());
+          var $lines           = $activeFrame.find('.linenums li');
+          var firstLine        = +($lines.first().val());
+
+          $($lines[activeLineNumber - firstLine - 1]).addClass('current');
+          $($lines[activeLineNumber - firstLine]).addClass('current active');
+          $($lines[activeLineNumber - firstLine + 1]).addClass('current');
+        }
+
+        // Highlight the active for the first frame:
+        highlightCurrentLine();
+
+        $frameLines.click(function() {
+          var $this  = $(this);
+          var id     = /frame\-line\-([\d]*)/.exec($this.attr('id'))[1];
+          var $codeFrame = $('#frame-code-' + id);
+
+          if($codeFrame) {
+            $activeLine.removeClass('active');
+            $activeFrame.removeClass('active');
+
+            $this.addClass('active');
+            $codeFrame.addClass('active');
+
+            $activeLine  = $this;
+            $activeFrame = $codeFrame;
+
+            highlightCurrentLine();
+
+            $container.animate({ scrollTop: headerHeight }, "fast");
+          }
+        });
+      });
+    </script>
+  </body>
 </html>

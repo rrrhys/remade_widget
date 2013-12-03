@@ -7,8 +7,8 @@
 	@endunless
 @stop
 @section('content')
-
-<pre>{{URL::action('WidgetController@to_user',array($widget_token))}}</pre>
+<h4>Widget code:</h4>
+<pre class='widget_code'>{{URL::action('WidgetController@to_user',array($widget_token))}}</pre>
 
 
 @if($user->parent_id == 0)

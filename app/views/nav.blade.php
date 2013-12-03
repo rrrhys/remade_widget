@@ -26,14 +26,14 @@
 					</a>
 
 	<div class="dropdown-menu" style='padding: 20px;'>
-		{{ Form::open(array('action'=>array('SessionController@create')))}}
+		{{ Form::open(array('action'=>array('SessionController@create'),'class'=>'signin'))}}
 {{Form::label('email')}}
-{{Form::text('email')}}
+{{Form::text('email','',array('class'=>'signin'))}}
 
 <br>
 {{Form::label('password')}}
-{{Form::password('password')}}
-{{Form::submit('Click')}}
+{{Form::password('password',array('class'=>'signin'))}}
+{{Form::submit('Sign in',array('class'=>'btn btn-primary'))}}
 		{{Form::close()}}
 	</div>
 
