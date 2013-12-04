@@ -18,7 +18,8 @@ class WidgetController extends BaseController {
 			$contents = View::make('widget/init_js')->with(array(
 				'widget'=>$user->widget,
 				'session'=>$widget_session,
-				'token'=>$user->widget_token
+				'token'=>$user->widget_token,
+				'jquery_url'=>'//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'
 				)); 
 			$response = Response::make($contents, 200);
 			$response->header('Content-Type', 'application/javascript');
