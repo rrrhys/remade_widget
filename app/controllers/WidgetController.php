@@ -35,6 +35,12 @@ class WidgetController extends BaseController {
 		}
 
 	}
+	public function css($widget_token){
+		
+	}
+	public function iframe($widget_token){
+
+	}
 	public function test_page($widget_token){
 		$user = User::where('widget_token','=',$widget_token)->first();
 		if(!$user){
@@ -46,8 +52,17 @@ class WidgetController extends BaseController {
 		}
 
 	}
-	public function update_stats($stat){
-		
+	public function update_stats(){
+		$stat = Input::get('stat');
+		$widget_token = Input::get('widget_token');
+		$user = User::where('widget_token','=',$widget_token)->first();
+		$existing_widget_session_id_from_cookie = Cookie::get('widget_session_id');
+
+		$widget_session = $user->widget->sessions()->where('id','=',$existing_widget_session_id_from_cookie)->first();
+		$widget_session->last_loaded = date( 'Y-m-d H:i:s', time());
+		$widget_session->save();
+		$response = Response::make($widget_session->toJson(), 200);
+			return $response;
 	}
 
 }

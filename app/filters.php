@@ -80,6 +80,6 @@ Route::filter('csrf', function()
 });
 
 
-User::creating(function($user){
+User::created(function($user){
 	$user->addChildren();
 });

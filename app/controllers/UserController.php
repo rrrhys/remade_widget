@@ -74,16 +74,8 @@ class UserController extends BaseController {
 
 			$user->parent_id = $parent_user->id;
 			$user->save();
-			$role = new Role;
-			$role->root = false;
-			$role->admin = false;
-			$user->role()->save($role);
 
-			$settings = new Settings;
-			$user->settings()->save($settings);
 
-			$widget_properties = new Widget_Properties;
-			$user->widget_properties()->save($widget_properties);
 
 			$user->password_reset_token = $this->get_password_reset_token();
 			$user->save();
@@ -117,17 +109,7 @@ class UserController extends BaseController {
 				$user->email = Input::get('email');
 				$user->password = Hash::make(Input::get('password'));
 				$user->widget_token = str_random(16);
-
 				$user->save();
-				$role = new Role;
-				$role->root = true;
-				$role->admin = false;
-				$user->role()->save($role);
-
-				$widget = new Widget();
-				$widget->start_open = false;
-				$user->widget()->save($widget);
-				
 
 				Auth::loginUsingId($user->id);
 				return Redirect::to("/dashboard")->with('success','Account created successfully!');		

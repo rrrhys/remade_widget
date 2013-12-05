@@ -1,4 +1,3 @@
-alert('where is my jquery');
 var support_widget = {};
 support_widget.finished_loading = null;
 (function(){
@@ -18,7 +17,8 @@ support_widget.finished_loading = null;
 		var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
 		document.cookie=c_name + "=" + c_value;
 	}
-	me.log = function(message){
+	me.log = function(message)
+	{
 		if(typeof(console) != "undefined"){
 			console.log(message);
 		}else{
@@ -49,12 +49,13 @@ support_widget.finished_loading = null;
 
 	me.update_stats = function(stat)
 	{
-		$.post("{{URL::action('WidgetController@update_stats',array($token))}}",{
+		$.post("{{URL::action('WidgetController@update_stats')}}",{
 			stat: stat,
-			session_identifier: me.session_identifier
+			widget_token: me.widget_token
 		});
 	}
-	finish_loading = function(){
+	me.finish_loading = function()
+	{
 		me.has_opened_yet = false;
 		me.trigger_on_click = false;
 		me.trigger_on_hover = true;
@@ -62,16 +63,48 @@ support_widget.finished_loading = null;
 		me.window_state = CLOSED;
 
 		me.widget_session_token = '{{$session->token}}';
-		me.widget_token = '{{$widget->token}}';
+		me.widget_token = '{{$token}}';
 		me.start_open = '{{$widget->start_open}}' == true;
 		me.set_cookie('wst',me.widget_session_token,1);
-		alert('Here is my jquery');
 		me.update_stats('loaded');
+
+		me.update_stats('widget_requested');
+		//jquery is available.
+		$("body").append("<iframe src='{{URL::action('WidgetController@iframe',array($token))}}' class='widget_iframe widget_iframe_display_none' id='widget_" + me.widget_token + "'></iframe>");
+		$("head").append("<link rel='stylesheet' type='text/css' href='{{URL::action('WidgetController@css',array($token))}}'>");
+		me.widget_dom = $("#" + me.widget_token);
+		if(me.trigger_on_hover){
+			$("#" + me.widget_id).hover(function(){
+					open_frame();
+
+			},function(){
+				//unhover
+				//	close_frame();
+			});
+		}
+		$("body").click(function(){
+
+			if(me.state != c.transitioning){
+				close_frame();
+			}
+		});
 	}
+
+	me.open_frame = function()
+	{
+		if(!has_opened_yet){
+			me.update_stats("widget_opened");
+			me.has_opened_yet = true;
+		}
+		me.state = TRANSITIONING;
+
+	}
+
 
 var jQueryScriptOutputted = false;
 
-function initJQuery() {
+function initJQuery() 
+{
     
     //if the jQuery object isn't available
     if (typeof(jQuery) == 'undefined') {
@@ -88,7 +121,7 @@ function initJQuery() {
                         
         $(function() {  
             me.log('got jquery');
-            finish_loading();
+            me.finish_loading();
         });
     }
             

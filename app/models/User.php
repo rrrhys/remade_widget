@@ -64,6 +64,16 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->hasMany('User','parent_id');
 	}
 	public function addChildren(){
-		return true;
+				$role = new Role;
+				$role->root = true;
+				$role->admin = false;
+				$this->role()->save($role);
+
+				$widget = new Widget();
+				$widget->start_open = false;
+				$this->widget()->save($widget);
+
+				$settings = new Settings();
+				$this->settings()->save($settings);
 	}
 }

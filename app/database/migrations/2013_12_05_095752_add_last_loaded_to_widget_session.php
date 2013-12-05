@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateWidgetStatsTable extends Migration {
+class AddLastLoadedToWidgetSession extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,10 @@ class CreateWidgetStatsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('widget_stats', function(Blueprint $table) {
-			$table->increments('id');
-			$table->integer('page_loads');
-			$table->integer('widget_id');
-			$table->timestamps();
+		Schema::table('widget_session', function(Blueprint $table) {
+			$table->timestamp('last_loaded');
 		});
 	}
-
 
 	/**
 	 * Reverse the migrations.
@@ -28,7 +24,9 @@ class CreateWidgetStatsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('widget_stats');
+		Schema::table('widget_session', function(Blueprint $table) {
+			$table->dropColumn('last_loaded');
+		});
 	}
 
 }
