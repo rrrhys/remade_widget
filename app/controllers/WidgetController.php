@@ -38,8 +38,8 @@ class WidgetController extends BaseController {
 		}
 
 	}
-	public function update_stats($stat, $widget_token){
-		$session_identifier = Input::get('session_identifier');
+	public function update_stats($stat){
+		
 	}
 
 }
