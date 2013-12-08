@@ -56,6 +56,7 @@ support_widget.finished_loading = null;
 	}
 	me.finish_loading = function()
 	{
+		//jquery is available.
 		me.has_opened_yet = false;
 		me.trigger_on_click = false;
 		me.trigger_on_hover = true;
@@ -68,14 +69,19 @@ support_widget.finished_loading = null;
 		me.set_cookie('wst',me.widget_session_token,1);
 		me.update_stats('loaded');
 
+		me.open_height = '200px;'
+		me.open_widget = '200px;'
+		me.closed_height = '40px;'
+		me.closed_width = '100px;';
+		me.start_open = false;
 		me.update_stats('widget_requested');
-		//jquery is available.
-		$("body").append("<iframe src='{{URL::action('WidgetController@iframe',array($token))}}' class='widget_iframe widget_iframe_display_none' id='widget_" + me.widget_token + "'></iframe>");
+
 		$("head").append("<link rel='stylesheet' type='text/css' href='{{URL::action('WidgetController@css',array($token))}}'>");
-		me.widget_dom = $("#" + me.widget_token);
+		$("body").append("<iframe src='{{URL::action('WidgetController@iframe',array($token))}}' class='widget_iframe widget_iframe_display_none' id='widget_" + me.widget_token + "'></iframe>");
+		me.widget_dom = $("#widget_" + me.widget_token);
 		if(me.trigger_on_hover){
-			$("#" + me.widget_id).hover(function(){
-					open_frame();
+			me.widget_dom.hover(function(){
+					me.open_frame();
 
 			},function(){
 				//unhover
@@ -85,10 +91,14 @@ support_widget.finished_loading = null;
 		$("body").click(function(){
 
 			if(me.state != c.transitioning){
-				close_frame();
+				me.close_frame();
 			}
 		});
-
+		if(me.start_open){
+			me.open_frame();
+		}else{
+			me.close_frame();
+		}
 		window.setTimeout(function(){
 			$(".widget_iframe_display_none").removeClass("widget_iframe_display_none");
 		},1000);
@@ -98,7 +108,7 @@ support_widget.finished_loading = null;
 
 	me.open_frame = function()
 	{
-		if(!has_opened_yet){
+		if(!me.has_opened_yet){
 			me.update_stats("widget_opened");
 			me.has_opened_yet = true;
 		}
