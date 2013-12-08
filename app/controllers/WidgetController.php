@@ -36,10 +36,13 @@ class WidgetController extends BaseController {
 
 	}
 	public function css($widget_token){
-		
+		$contents = View::make('widget/host_css');
+			$response = Response::make($contents, 200);
+			$response->header('Content-Type', 'text/css');
+			return $response;			
 	}
 	public function iframe($widget_token){
-
+		return View::make('widget/iframe_contents',array('widget_token'=>$widget_token));
 	}
 	public function test_page($widget_token){
 		$user = User::where('widget_token','=',$widget_token)->first();

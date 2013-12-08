@@ -17,9 +17,9 @@ Route::get('/dashboard', 'UserController@show');
 
 
 //Route::get('/widget/{widget_token}', 'WidgetController@to_user');
-Route::get('widget/js/{widget_token}', 'WidgetController@js');
+Route::get('widget/js/{widget_token}.js', 'WidgetController@js');
 Route::get('widget/iframe/{widget_token}', 'WidgetController@iframe');
-Route::get('widget/css/{widget_token}', 'WidgetController@css');
+Route::get('widget/css/{widget_token}.css', 'WidgetController@css');
 Route::get('widget/test_page/{widget_token}','WidgetController@test_page');
 Route::post('widget/update_stats','WidgetController@update_stats');
 

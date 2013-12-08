@@ -88,6 +88,12 @@ support_widget.finished_loading = null;
 				close_frame();
 			}
 		});
+
+		window.setTimeout(function(){
+			$(".widget_iframe_display_none").removeClass("widget_iframe_display_none");
+		},1000);
+		me.update_stats("widget_loaded");
+
 	}
 
 	me.open_frame = function()
@@ -97,9 +103,12 @@ support_widget.finished_loading = null;
 			me.has_opened_yet = true;
 		}
 		me.state = TRANSITIONING;
+		me.widget_dom.animate({height:me.open_height, width: me.open_width},100,function(){me.state = OPEN;});
 
 	}
-
+	me.close_frame = function(){
+		me.widget_dom.animate({height:me.closed_height, width: me.closed_width},100,function(){me.state = CLOSED;});
+	}
 
 var jQueryScriptOutputted = false;
 
