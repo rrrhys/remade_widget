@@ -88,9 +88,9 @@ support_widget.finished_loading = null;
 				//	close_frame();
 			});
 		}
-		$("body").click(function(){
+		$("body").on('click',function(){
 
-			if(me.state != c.transitioning){
+			if(me.state != TRANSITIONING){
 				me.close_frame();
 			}
 		});
